@@ -1,5 +1,5 @@
 <?php 
-if(isset($_POST['login-submit'])){
+if(isset($_POST['login-button'])){
 
     require 'dbh.php';
 
@@ -7,13 +7,13 @@ if(isset($_POST['login-submit'])){
     $password = $_POST['pwd'];
 
     if(empty($mailuid) || empty($password)){
-        header("Location: ../index.php?error=emptyfields");
+        header("Location: ../login.php?error=emptyfields");
         exit();
     }else{
         $sql = "SELECT * FROM register WHERE Username=? OR Email=?;";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
-            header("Location: ../index.php?error=sqlerror");
+            header("Location: ../login.php?error=sqlerror");
         exit();
         }else{
 
@@ -23,21 +23,21 @@ if(isset($_POST['login-submit'])){
             if($row = mysqli_fetch_assoc($result)){
                 $pwdCheck = password_verify($password, $row['Password']);
                 if($pwdCheck == false){
-                    header("Location: ../index.php?error=wrongpassword");
+                    header("Location: ../login.php?error=wrongpassword");
                 exit();
                 }else if($pwdCheck == true){
                     session_start();
                     $_SESSION['userID'] =$row['ID'];
                     $_SESSION['useruID'] =$row['Username'];
 
-                    header("Location: ../index.php?login=succes");
+                    header("Location: ../login.php?login=succes");
                      exit();
                 }else{
-                    header("Location: ../index.php?error=nouser");
+                    header("Location: ../login.php?error=nouser");
                      exit();
                 }
             }else{
-                header("Location: ../index.php?error=nouser");
+                header("Location: ../login.php?error=nouser");
                 exit();
             }
 

@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 
 <!doctype html>
 <html lang="en">
@@ -27,7 +30,7 @@
         <a href="register.php" class="nav-item">Register</a>
         <a href="contact-us.php" class="nav-item">Contact us</a>
     </div>
-
+    
     <section class="main-section">
         <h1>Learn About Nature</h1>
         <h4>All over the land</h4>
