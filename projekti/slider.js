@@ -7,7 +7,7 @@ const prevBtn = document.querySelector('#prevButton');
 const nextBtn = document.querySelector('#nextButton');
 
 let count = 1;
-const size = images[2].clientWidth;
+const size = images[0].clientWidth;
 
 slide.style.transform = 'translateX('+(-size * count)+ 'px)';
 
@@ -16,7 +16,7 @@ slide.style.transform = 'translateX('+(-size * count)+ 'px)';
 nextBtn.addEventListener('click', ()=>{
     if (count >= images.length - 1)return;
 
-   slide.style.transition = "transform 0.5 ease-in-out";
+   slide.style.transition = "transform 0.4 ease-in-out";
    count++;
    slide.style.transform = 'translateX(' + (-size * count) + 'px)';
 });
