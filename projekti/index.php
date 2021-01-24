@@ -37,8 +37,7 @@
     </section>
 
     <section class="image">
-        <i class="fas fa-arrow-left" id="prevButton"></i>
-        <i class="fas fa-arrow-right" id="nextButton"></i>
+        <!-- 
         <div class="image-slide">
             <img src="images/cow.jpg" class="section-image" id="lastClone" alt="">
             <img src="images/monki.jpg" class="section-image" alt="">
@@ -47,7 +46,26 @@
             <img src="images/lion.jpg" class="section-image" alt="">
             <img src="images/cow.jpg" class="section-image" alt="">
             <img src="images/monki.jpg" class="section-image" id="firstClone" alt="">
+        </div> -->
+          <div class="image-slide fade">
+            <img src="images/cow.jpg" style="width:100%">
         </div>
+           <div class="image-slide fade">
+            <img src="images/kaprollat.jpg" style="width:100%">
+        </div>
+        <div class="image-slide fade">
+            <img src="images/clouds.jpg" style="width:100%">
+        </div>
+         <div class="image-slide fade">
+            <img src="images/lion.jpg" style="width:100%">
+        </div>
+            <div class="image-slide fade">
+            <img src="images/monki.jpg" style="width:100%">
+        </div>
+
+
+        <i class="fas fa-arrow-left" id="prevButton"  onclick="plusSlides(-1)"></i>
+        <i class="fas fa-arrow-right" id="nextButton" onclick="plusSlides(1)"></i>
     </section>
 
     <section class="text">

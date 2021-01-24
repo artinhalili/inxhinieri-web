@@ -1,42 +1,28 @@
-const slide = document.querySelector('.image-slide');
-const images = document.querySelectorAll('.image-slide img');
+let slideIndex = 1;
+showSlides(slideIndex);
 
-//buttons
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
 
-const prevBtn = document.querySelector('#prevButton');
-const nextBtn = document.querySelector('#nextButton');
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
-let count = 1;
-const size = images[0].clientWidth;
-
-slide.style.transform = 'translateX('+(-size * count)+ 'px)';
-
-//btn listeners
-
-nextBtn.addEventListener('click', ()=>{
-    if (count >= images.length - 1)return;
-
-   slide.style.transition = "transform 0.4 ease-in-out";
-   count++;
-   slide.style.transform = 'translateX(' + (-size * count) + 'px)';
-});
-
-prevBtn.addEventListener('click', ()=>{
-    if (count <= 0)return;
-    slide.style.transition = 'transform 0.4 ease-in-out';
-    count--;
-    slide.style.transform = 'translateX(' + (-size * count) + 'px)';
-});
-
-slide.addEventListener('transitionend', ()=>{
-   if (images[count].id === 'lastClone'){
-       slide.style.transition = 'none';
-       count = images.length - 2 ;
-       slide.style.transform = 'translateX(' + (-size * count) + 'px)';
-   }
-    if (images[count].id === 'firstClone'){
-        slide.style.transition = 'none';
-        count = images.length - count ;
-        slide.style.transform = 'translateX(' + (-size * count) + 'px)';
-    }
-});
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("image-slide");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
