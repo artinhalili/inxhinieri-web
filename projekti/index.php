@@ -29,6 +29,7 @@
         <a href="login.php" class="nav-item">Login</a>
         <a href="register.php" class="nav-item">Register</a>
         <a href="contact-us.php" class="nav-item">Contact us</a>
+        <a href="products/products.php" class="nav-item">Products</a>
     </div>
     
     <section class="main-section">
