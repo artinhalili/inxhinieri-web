@@ -10,7 +10,7 @@ if(isset($_POST['login-button'])){
         header("Location: ../login.php?error=emptyfields");
         exit();
     }else{
-        $sql = "SELECT * FROM register WHERE Username=? OR Email=?;";
+        $sql = "SELECT * FROM tblusers WHERE Fullname=? OR EmailId=?;";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt, $sql)){
             header("Location: ../login.php?error=sqlerror");
@@ -30,7 +30,7 @@ if(isset($_POST['login-button'])){
                     $_SESSION['userID'] =$row['ID'];
                     $_SESSION['useruID'] =$row['Username'];
 
-                    header("Location: ../login.php?login=succes");
+                    header("Location: ../index.php?login=succes");
                      exit();
                 }else{
                     header("Location: ../login.php?error=nouser");

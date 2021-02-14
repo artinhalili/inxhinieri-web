@@ -30,7 +30,7 @@ if(isset($_POST['signup-submit'])){
     }
     else{
 
-    $sql = "SELECT Username FROM register WHERE Username=?";
+    $sql = "SELECT FullName FROM tblusers WHERE FullName=?";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         header("Location: ../register.php?error=sqlerror");
@@ -45,7 +45,7 @@ if(isset($_POST['signup-submit'])){
             exit();
         }else{
 
-            $sql = "INSERT INTO register (Username, Email, Password) VALUES (?, ?, ?)";
+            $sql = "INSERT INTO tblusers (FullName, EmailId, Password) VALUES (?, ?, ?)";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt, $sql)){
                 header("Location: ../register.php?error=sqlerror");

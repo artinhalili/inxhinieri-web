@@ -23,31 +23,29 @@
 <!--  PUNUAN : ARTIN HALILI dhe BLEDON IBISHI  -->
 </head>
 <body>
-    <div class="nav">
-        <a href="index.php" class="nav-item">Home</a>
-        <a href="aboutus.php" class="nav-item">About</a>
-        <a href="login.php" class="nav-item">Login</a>
-        <a href="register.php" class="nav-item">Register</a>
-        <a href="contact-us.php" class="nav-item">Contact us</a>
-        <a href="products/products.php" class="nav-item">Products</a>
-    </div>
-    
+<div class="navbar">
+            
+                <img src="products/products-images/icon3.jpg" width="55px">
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.php?type=home" class="nav-item">HOME</a></li>
+                    <li><a href="aboutus.php?type=About" class="nav-item">About Us</a></li>
+                    <li><a href="login.php?type=Login" class="nav-item">Login</a></li>
+                    <li><a href="register.php?type=Register" class="nav-item">Register</a></li>
+                    <li><a href="contact-us.php?type=Contact" class="nav-item">Contact Us</a></li>
+                    <li><a href="products/product.php?type=Products" class="nav-item">Product</a></li>
+                    <li><a href="admin/?type=admin" class="nav-item">Admin</a></li>
+                </ul>
+            </nav>
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+
     <section class="main-section">
         <h1>Learn About Nature</h1>
         <h4>All over the land</h4>
     </section>
 
     <section class="image">
-        <!-- 
-        <div class="image-slide">
-            <img src="images/cow.jpg" class="section-image" id="lastClone" alt="">
-            <img src="images/monki.jpg" class="section-image" alt="">
-            <img src="images/kaprollat.jpg" class="section-image" alt="">
-            <img src="images/clouds.jpg" class="section-image" alt="">
-            <img src="images/lion.jpg" class="section-image" alt="">
-            <img src="images/cow.jpg" class="section-image" alt="">
-            <img src="images/monki.jpg" class="section-image" id="firstClone" alt="">
-        </div> -->
           <div class="image-slide fade">
             <img src="images/cow.jpg" style="width:100%">
         </div>
@@ -110,6 +108,25 @@
         </div>
     </section>
 
+    <div class="offer">
+    <div class="small-container">
+        <div class="row-1">
+            <div class="col-2">
+                <img src="products/products-images/product-2.jpg" class="offer-img">
+            </div>
+            <div class="col-2">
+                <p>Avalilable at our Stores</p>
+                <h1>OUR PRODUCTS!</h1>
+                <small>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                     Ab, obcaecati accusamus adipisci libero molestias esse.
+                </small>
+                <a href="products/product.php" class="btn">PRODUCTS &#8594</a>
+            </div>
+        </div>
+    </div>
+</div>
+
     <footer>
         <div class="footer-row">
             <div class="footer-col-1">
@@ -134,9 +151,24 @@
         </div>
     </footer>
 
+
     <section class="copy-right">
         <p>&copy; Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, quo.</p>
     </section>
     <script src="slider.js"></script>
+
+    <script>
+    var MenuItems = document.getElementById("MenuItems");
+
+    MenuItems.style.maxHeight = "0px";
+
+    function menutoggle(){
+        if(MenuItems.style.maxHeight == "0px"){
+            MenuItems.style.maxHeight = "200px";
+        }else{
+            MenuItems.style.maxHeight = "0px";
+        }
+    }
+</script>
 </body>
 </html>

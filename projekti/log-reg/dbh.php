@@ -3,7 +3,7 @@
 $serverName = "127.0.0.1";
 $dbUsername = "root";
 $dbPassword = "";
-$dbName = "projectidb";
+$dbName = "carrental";
 
 $conn = mysqli_connect($serverName,$dbUsername ,$dbPassword,$dbName );
 
